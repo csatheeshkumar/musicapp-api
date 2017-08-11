@@ -1,0 +1,179 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.music</groupId>
+  <artifactId>music-album-api</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>music-album-api Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId>
+	<version>1.4.1.RELEASE</version>
+  </parent>
+  
+  <properties>
+  	<start-class>com.music.Application</start-class>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-actuator</artifactId>
+	</dependency>
+	
+	<!-- web development, including Tomcat and spring-webmvc -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-tomcat</artifactId>
+		<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-mail</artifactId>
+	</dependency>
+	
+  <!-- spring-data-jpa, spring-orm and Hibernate -->
+  <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-jpa</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>com.h2database</groupId>
+		<artifactId>h2</artifactId>
+		<version>1.4.181</version><!--$NO-MVN-MAN-VER$-->
+	</dependency>
+	
+	<!-- integration with Swagger API doc generation http://goo.gl/J5FQDM -->
+		<dependency>
+			<groupId>com.mangofactory</groupId>
+			<artifactId>swagger-springmvc</artifactId>
+			<version>0.8.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+	
+	<!-- spring-test, hamcrest, ... -->
+    <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+  
+    <!-- <dependency>
+	   <groupId>org.hsqldb</groupId>
+	   <artifactId>hsqldb</artifactId>
+	   <scope>runtime</scope>
+	</dependency> -->
+
+    <!-- MySQL Dependency -->
+	<dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>2.4</version>
+	</dependency>
+	
+	<!-- JSR 303 with Hibernate Validator -->
+	<dependency>
+		<groupId>javax.validation</groupId>
+		<artifactId>validation-api</artifactId>
+		<version>1.0.0.GA</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>4.1.0.Final</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons-core -->
+	<dependency>
+		<groupId>org.springframework.data</groupId>
+		<artifactId>spring-data-commons-core</artifactId>
+		<version>1.2.1.RELEASE</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20080701</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.8.0</version>
+	</dependency>
+	
+  </dependencies>
+  
+  
+  
+  <!-- Set as an build configuration for zk Evaluation Project -->
+  <build>
+  <finalName>music-album-api</finalName>
+ 	<resources>
+		<resource>
+			<directory>src/main/resources</directory>
+			<filtering>true</filtering>
+		</resource>
+	</resources>
+	
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.1</version>
+			<configuration>
+				<source>1.7</source>
+				<target>1.7</target>
+			</configuration>
+		</plugin>
+		
+		<!-- Spring boot support -->
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+			<configuration>
+				<addResources>false</addResources>
+			</configuration>
+		</plugin>
+		
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-install-plugin</artifactId>
+			<executions>
+			</executions>
+		</plugin>
+	</plugins>
+		
+  </build>
+  
+</project>
