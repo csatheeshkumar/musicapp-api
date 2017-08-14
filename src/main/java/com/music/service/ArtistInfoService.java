@@ -6,6 +6,6 @@ public interface ArtistInfoService {
 	
 	public boolean validateArtistNameAlreadyExist(ArtistDTO artistDTO);
 	
-	public boolean saveArtistInfo(ArtistDTO artistDTO);
+	public Integer saveArtistInfo(ArtistDTO artistDTO);
 
 }
